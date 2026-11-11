@@ -1,0 +1,8 @@
+.venv/
+Calculator/
+data/*.csv
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+.DS_Store

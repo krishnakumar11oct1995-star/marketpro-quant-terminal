@@ -1,0 +1,23 @@
+============================================================
+MarketProAgent Report — BHARTIARTL.NS
+Generated: 2026-05-26 14:54:13
+============================================================
+
+[MARKET CONTEXT]
+  ^NSEI: 23888.4 (-0.60%)
+  ^BSESN: 75972.31 (-0.68%)
+
+[STRATEGY SIGNALS]
+  supertrend: StrategySignal.NEUTRAL (conf: 0%)
+    Reason: Error: cannot convert float NaN to integer
+  macd_crossover: StrategySignal.NEUTRAL (conf: 30%)
+  rsi_mean_reversion: StrategySignal.NEUTRAL (conf: 30%)
+  breakout: StrategySignal.NEUTRAL (conf: 20%)
+
+[VALUATION]
+  N/A
+
+[ML FORECAST]
+  N/A
+
+============================================================

@@ -1,0 +1,23 @@
+============================================================
+MarketProAgent Report — RELIANCE.NS
+Generated: 2026-05-26 14:52:56
+============================================================
+
+[MARKET CONTEXT]
+  ^NSEI: 23889.85 (-0.59%)
+  ^BSESN: 75953.87 (-0.70%)
+
+[STRATEGY SIGNALS]
+  supertrend: StrategySignal.STRONG_SELL (conf: 60%)
+    Reason: Continuation: trend is DOWN
+  macd_crossover: StrategySignal.NEUTRAL (conf: 30%)
+  rsi_mean_reversion: StrategySignal.NEUTRAL (conf: 30%)
+  breakout: StrategySignal.NEUTRAL (conf: 20%)
+
+[VALUATION]
+  N/A
+
+[ML FORECAST]
+  N/A
+
+============================================================

@@ -1,0 +1,84 @@
+# MarketProAgent Configuration
+agent:
+  name: "MarketProAgent"
+  version: "1.0.0"
+  log_level: "INFO"
+  data_dir: "./data"
+  output_dir: "./output"
+
+trading:
+  mode: "paper"                    # paper | live
+  capital: 100000                  # initial capital for paper/live
+  risk_per_trade_pct: 1.0          # % of capital risk per trade
+  max_trades_per_day: 5
+  max_daily_loss_pct: 3.0          # circuit breaker
+  max_positions: 3
+  product_type: "MIS"              # MIS (intraday) | NRML (delivery)
+  stop_loss_default_pct: 15.0      # default SL on premium
+  trailing_sl_activation_pct: 10.0 # activate trailing SL when profit hits this
+  trailing_sl_distance_pct: 5.0    # trailing distance
+
+strategies:
+  enabled: ["supertrend", "macd_crossover", "rsi_mean_reversion", "breakout"]
+  reassessment_period_minutes: 60  # auto-reassess if no signal after N minutes
+  backtest_period: "6mo"           # period for strategy backtesting
+
+watchlist:
+  # Default stocks to monitor
+  tickers:
+    - "RELIANCE.NS"
+    - "TCS.NS"
+    - "INFY.NS"
+    - "HDFCBANK.NS"
+    - "ICICIBANK.NS"
+    - "SBIN.NS"
+    # - "TATAMOTORS.NS"  # Temporarily unavailable on yfinance
+    - "BHARTIARTL.NS"
+    - "ITC.NS"
+    - "NTPC.NS"
+  # Index for market context
+  indices:
+    - "^NSEI"      # NIFTY 50
+    - "^BSESN"     # SENSEX
+
+screening:
+  enabled: true
+  scan_tickers: "NIFTY_500"        # NIFTY_500 | from_file
+  scan_interval_minutes: 1440      # once per day
+  patterns: ["volume_breakout", "vcp", "near_52w_high", "bullish_engulfing"]
+
+scheduling:
+  pre_market: "09:00"              # pre-market analysis
+  market_open: "09:15"             # market opens
+  market_close: "15:30"            # market closes
+  post_market: "16:00"             # end-of-day analysis
+  scan_time: "08:00"               # daily screener
+
+llm:
+  enabled: false                   # enable only with API key
+  provider: "gemini"               # gemini | openai
+  api_key: ""                      # set via env or here
+  model: "gemini-2.0-flash"        # gemini-pro | gpt-4o
+  use_rag: false
+  rag_min_trading_days: 5
+
+reports:
+  generate_pdf: true
+  send_email: false
+  email:
+    smtp_server: ""
+    smtp_port: 587
+    sender_email: ""
+    sender_password: ""
+    receiver_email: ""
+
+database:
+  path: "./data/market.db"
+  auto_cleanup_days: 365           # keep data for 1 year
+
+logging:
+  console: true
+  file: true
+  file_path: "./data/logs/agent.log"
+  max_bytes: 10485760              # 10MB
+  backup_count: 5

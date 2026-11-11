@@ -1,0 +1,21 @@
+PyQt6>=6.5
+pyqtgraph>=0.13
+yfinance>=0.2.40
+pandas>=2.0
+numpy>=1.24
+pandas-datareader>=0.10
+scipy>=1.11
+# pandas-ta (skipped - Python 3.14 compat pending)
+PyPortfolioOpt>=1.5
+quantstats>=0.0.62
+py_vollib>=1.0
+ollama>=0.4
+matplotlib>=3.8
+plotly>=5.18
+reportlab>=4.0
+feedparser>=6.0
+httpx>=0.25
+fredapi>=0.5
+openpyxl>=3.1
+requests>=2.31
+python-dotenv>=1.0

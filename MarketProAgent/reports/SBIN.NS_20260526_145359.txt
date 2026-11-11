@@ -1,0 +1,24 @@
+============================================================
+MarketProAgent Report — SBIN.NS
+Generated: 2026-05-26 14:53:59
+============================================================
+
+[MARKET CONTEXT]
+  ^NSEI: 23890.05 (-0.59%)
+  ^BSESN: 75976.1 (-0.67%)
+
+[STRATEGY SIGNALS]
+  supertrend: StrategySignal.STRONG_SELL (conf: 60%)
+    Reason: Continuation: trend is DOWN
+  macd_crossover: StrategySignal.NEUTRAL (conf: 30%)
+  rsi_mean_reversion: StrategySignal.BUY (conf: 65%)
+    Reason: RSI oversold bounce (21.9 < 30.0)
+  breakout: StrategySignal.NEUTRAL (conf: 20%)
+
+[VALUATION]
+  N/A
+
+[ML FORECAST]
+  N/A
+
+============================================================

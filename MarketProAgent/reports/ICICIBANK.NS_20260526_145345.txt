@@ -1,0 +1,23 @@
+============================================================
+MarketProAgent Report — ICICIBANK.NS
+Generated: 2026-05-26 14:53:45
+============================================================
+
+[MARKET CONTEXT]
+  ^NSEI: 23888.6 (-0.60%)
+  ^BSESN: 75964.7 (-0.69%)
+
+[STRATEGY SIGNALS]
+  supertrend: StrategySignal.STRONG_BUY (conf: 60%)
+    Reason: Continuation: trend is UP
+  macd_crossover: StrategySignal.NEUTRAL (conf: 30%)
+  rsi_mean_reversion: StrategySignal.NEUTRAL (conf: 30%)
+  breakout: StrategySignal.NEUTRAL (conf: 20%)
+
+[VALUATION]
+  N/A
+
+[ML FORECAST]
+  N/A
+
+============================================================
