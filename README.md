@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/logo.svg" alt="marketpro-quant-terminal Logo" width="160" />
+</p>
+
 # MarketPro Quant Terminal & Multi-Agent Suite
 
 > Desktop financial analysis workstation and algorithmic trading research system built with PyQt6.
