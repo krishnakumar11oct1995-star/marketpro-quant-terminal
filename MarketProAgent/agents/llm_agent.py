@@ -2,6 +2,7 @@
 LLM Agent — optional LLM integration for decision-making and report generation.
 Currently supports Gemini (free tier) and OpenAI.
 """
+import os
 import json
 from typing import Optional, Dict, Any
 
@@ -11,7 +12,7 @@ class LLMAgent:
         self.config = config
         self.llm_config = config.get('llm', {})
         self.provider = self.llm_config.get('provider', 'none')
-        self.api_key = self.llm_config.get('api_key', '')
+        self.api_key = os.environ.get('LLM_API_KEY') or self.llm_config.get('api_key', '')
         self.model = self.llm_config.get('model', 'gemini-2.0-flash')
         self.enabled = self.provider != 'none' and bool(self.api_key)
 

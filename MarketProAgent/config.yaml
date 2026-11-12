@@ -57,7 +57,7 @@ scheduling:
 llm:
   enabled: false                   # enable only with API key
   provider: "gemini"               # gemini | openai
-  api_key: ""                      # set via env or here
+  api_key: ""                      # leave empty; set LLM_API_KEY env var
   model: "gemini-2.0-flash"        # gemini-pro | gpt-4o
   use_rag: false
   rag_min_trading_days: 5
@@ -69,7 +69,7 @@ reports:
     smtp_server: ""
     smtp_port: 587
     sender_email: ""
-    sender_password: ""
+    sender_password: ""             # leave empty; set SMTP_PASSWORD env var
     receiver_email: ""
 
 database:

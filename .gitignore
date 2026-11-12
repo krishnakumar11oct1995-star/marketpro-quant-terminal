@@ -10,3 +10,7 @@ __pycache__/
 !assets/logo.svg
 !assets/
 !assets/**
+
+# Local data / generated output
+*.db
+MarketProAgent/reports/

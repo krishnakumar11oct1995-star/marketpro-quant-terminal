@@ -17,7 +17,22 @@ def load_config(path: str = None) -> dict:
         path = os.path.join(os.path.dirname(__file__), 'config.yaml')
     import yaml
     with open(path, 'r') as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f) or {}
+    return apply_env_secrets(config)
+
+
+def apply_env_secrets(config: dict) -> dict:
+    """Secrets come from env vars first; config.yaml values are only a fallback."""
+    llm = config.get('llm') or {}
+    config['llm'] = llm
+    llm['api_key'] = os.environ.get('LLM_API_KEY') or llm.get('api_key') or ''
+
+    reports = config.get('reports') or {}
+    config['reports'] = reports
+    email = reports.get('email') or {}
+    reports['email'] = email
+    email['sender_password'] = os.environ.get('SMTP_PASSWORD') or email.get('sender_password') or ''
+    return config
 
 
 def cmd_analyze(args):
